@@ -23,18 +23,21 @@ public class beforeAddAspect {
     // aspect before 'add' function in Controller package
     @Before("execution(* com.example.AirlineProject.Controller.*.add*(*))")
     public void beforeAdd() {
-        ++ID;
+      ++ID;
         Date d = new Date();
         String date = String.valueOf(new Timestamp(d.getTime()));
-        requestData x = new requestData(ID, date);
-        rService.add(x);
+        requestData rd = new requestData(ID, date);
+        rService.add(rd);
     }
 
     //aspect before adding new message
     @Before("execution(* com.example.AirlineProject.Message.MessageController.add*(*))")
     public void beforeAddMessage() {
-        requestData x = new requestData();
-        rService.add(x);
+        ++ID;
+        Date d = new Date();
+        String date = String.valueOf(new Timestamp(d.getTime()));
+        requestData rd = new requestData(ID, date);
+        rService.add(rd);
     }
 
 }
