@@ -1,0 +1,6 @@
+
+Connection to PG-Admin:
+
+URL = "jdbc:postgresql://localhost:5432/AirlinesProject"
+PORT = 5432
+PASSWORD = 1234
